@@ -1,12 +1,26 @@
-<div class="container">
-    <div class="jumbotron">
-        <h1>
-            Welcome to Ember.js
-            <p>
-                A framework for creating <b>ambitious</b> web applications
-            </p>
-        </h1>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {{#link-to 'index' class='navbar-brand'}}
+                <img alt="Ember.js" height="30px" src="/assets/images/emberjs.png">
+            {{/link-to}}
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                {{#link-to 'demo.handlebars' tagName='li'}}<a>Handlebars</a>{{/link-to}}
+                {{#link-to 'demo.web-components' tagName='li'}}<a>Web Components</a>{{/link-to}}
+                {{#link-to 'demo.data' tagName='li'}}<a>Data</a>{{/link-to}}
+            </ul>
+        </div>
     </div>
-    {{bs-breadcrumbs}}
+</nav>
+
+<div class="container">
     {{outlet}}
 </div>
