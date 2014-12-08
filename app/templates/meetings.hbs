@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>
+            Meetings
+        </h1>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Duration</th>
+        </tr>
+        {{#each meeting in model}}
+            <tr>
+                <td>{{meeting.title}}</td>
+                <td>{{meeting.duration}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>
