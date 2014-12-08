@@ -18,7 +18,7 @@
             <th>Duration</th>
             <th>Attendees</th>
         </tr>
-        {{#each meeting in model itemController="meeting"}}
+        {{#each meeting in model.meetings itemController="meeting"}}
             <tr>
                 {{#if meeting.isEditing}}
                     <td>
@@ -44,6 +44,17 @@
                                 </li>
                             {{/each}}
                         </ul>
+
+                        <div class="row">
+                            <div class="col-xs-10">
+                                {{view "select" class="form-control" content=model.people optionLabelPath="content.name" optionValuePath="content.id" selection=meeting.selectedPerson}}
+                            </div>
+                            <div class="col-xs-1">
+                                <button class="btn btn-success" type="button" {{action "addAttendee"}}>
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </div>
+                        </div>
                     </td>
                 {{else}}
                     <td>

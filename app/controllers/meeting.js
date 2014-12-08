@@ -15,6 +15,22 @@ export default Ember.ObjectController.extend({
 
             this.set('isEditing', false);
         },
+        addAttendee: function() {
+            console.log('add');
+            var person = this.get('selectedPerson');
+            var meeting = this.get('model');
+
+            if(!person || !meeting) { return; }
+
+            // Create the new Attendee model
+            var attendee = this.store.createRecord('attendee', {
+                person: person,
+                meeting: meeting
+            });
+
+            // Save the new model
+            attendee.save();
+        },
         save: function() {
             this.set('isEditing', false);
 
