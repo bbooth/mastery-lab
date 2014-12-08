@@ -37,9 +37,10 @@
                     </td>
                     <td>
                         <ul>
-                            {{#each attendee in meeting.attendees}}
+                            {{#each attendee in meeting.attendees itemController="attendee"}}
                                 <li>
                                     {{attendee.person.name}}
+                                    <a href="#" class="glyphicon glyphicon-remove-circle text-danger" {{action "deleteAttendee" on="click"}}></a>
                                 </li>
                             {{/each}}
                         </ul>
