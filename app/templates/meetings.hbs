@@ -3,6 +3,13 @@
         <h1>
             Meetings
         </h1>
+
+        <div class="input-group">
+            {{input class="form-control" type="text" id="create-meeting" placeholder="meeting name" value=newTitle action="createMeeting"}}
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="button">Create</button>
+            </span>
+        </div>
     </div>
     <table class="table">
         <tr>
@@ -16,9 +23,9 @@
                 <td>{{meeting.duration}}</td>
                 <td>
                     <ul>
-                    {{#each attendee in meeting.attendees}}
-                        <li>{{attendee.name}}</li>
-                    {{/each}}
+                        {{#each attendee in meeting.attendees}}
+                            <li>{{attendee.person.name}}</li>
+                        {{/each}}
                     </ul>
                 </td>
             </tr>
