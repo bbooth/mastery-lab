@@ -8,11 +8,19 @@
         <tr>
             <th>Title</th>
             <th>Duration</th>
+            <th>Attendees</th>
         </tr>
         {{#each meeting in model}}
             <tr>
                 <td>{{meeting.title}}</td>
                 <td>{{meeting.duration}}</td>
+                <td>
+                    <ul>
+                    {{#each attendee in meeting.attendees}}
+                        <li>{{attendee.name}}</li>
+                    {{/each}}
+                    </ul>
+                </td>
             </tr>
         {{/each}}
     </table>
