@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var Meeting = DS.Model.extend({
     title: DS.attr('string'),
-    duration: DS.attr('int'),
+    duration: DS.attr('number'),
     attendees: DS.hasMany('attendee', {async: true})
 });
 
