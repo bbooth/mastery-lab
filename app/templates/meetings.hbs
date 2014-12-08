@@ -17,6 +17,7 @@
             <th>Title</th>
             <th>Duration</th>
             <th>Attendees</th>
+            <th>Cost</th>
         </tr>
         {{#each meeting in model.meetings itemController="meeting"}}
             <tr>
@@ -56,6 +57,7 @@
                             </div>
                         </div>
                     </td>
+                    <td></td>
                 {{else}}
                     <td>
                         <button type="button" class="btn btn-sm btn-warning" {{action "editMeeting" on="click"}}>
@@ -71,6 +73,7 @@
                             {{/each}}
                         </ul>
                     </td>
+                    <td>{{meeting.cost}}</td>
                 {{/if}}
             </tr>
         {{/each}}

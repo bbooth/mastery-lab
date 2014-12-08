@@ -42,5 +42,23 @@ export default Ember.ObjectController.extend({
         }
     },
     deletedAttendees: Ember.A(),
-    isEditing: false
+    isEditing: false,
+    cost: function() {
+        var totalWages = 0;
+        var count = 0;
+        var meeting = this.get('model');
+        var attendees = this.get('model.attendees');
+        var duration = parseInt( meeting.get('duration'));
+
+        console.log(duration);
+
+        attendees.forEach(function(attendee) {
+            var person = attendee.get('person');
+            var wage = parseFloat(person.get('wagePerHour'));
+            totalWages = totalWages + wage;
+            count++;
+        });
+
+        return totalWages / count * duration / 60;
+    }.property('model.attendees.@each.person.wagePerHour')
 });

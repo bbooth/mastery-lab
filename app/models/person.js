@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var Person = DS.Model.extend({
     name: DS.attr('string'),
-    wagePerHour: DS.attr('double'),
+    wagePerHour: DS.attr('number'),
     attendees: DS.hasMany('attendee', {async: true})
 });
 
