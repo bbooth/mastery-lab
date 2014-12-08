@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>
+            People
+        </h1>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Wage / hr</th>
+        </tr>
+        {{#each person in model}}
+            <tr>
+                <td>{{person.name}}</td>
+                <td>{{person.wagePerHour}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>

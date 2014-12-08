@@ -1,0 +1,18 @@
+import DS from 'ember-data';
+
+var Person = DS.Model.extend({
+    name: DS.attr('string'),
+    wagePerHour: DS.attr('double')
+});
+
+Person.reopenClass({
+    FIXTURES: [
+        { id: 1, name: 'The Mighty Chewbacca', wagePerHour: '225.00' },
+        { id: 2, name: 'Han Solo', wagePerHour: '115.00' },
+        { id: 3, name: 'Master Yoda', wagePerHour: '500.00' },
+        { id: 4, name: 'Luke Skywalker', wagePerHour: '50.00' },
+        { id: 5, name: 'Leia Organa', wagePerHour: '750.00' }
+    ]
+});
+
+export default Person;
