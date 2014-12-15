@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
             // Create the new Meeting model
             var meeting = this.store.createRecord('meeting', {
                 title: title,
-                duration: '1h'
+                duration: '60'
             });
 
             // Clear the "New Meeting" text field
