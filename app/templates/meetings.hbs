@@ -4,12 +4,14 @@
             Meetings
         </h1>
 
-        <div class="input-group">
-            {{input class="form-control" type="text" id="create-meeting" placeholder="meeting name" value=newTitle action="createMeeting"}}
-            <span class="input-group-btn">
-                <button class="btn btn-success" type="button">Create</button>
+        <form {{action 'createMeeting' on="submit"}}>
+            <div class="input-group">
+                {{input class="form-control" type="text" id="create-meeting" placeholder="meeting name" value=newTitle}}
+                <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">Create</button>
             </span>
-        </div>
+            </div>
+        </form>
     </div>
     <table class="table">
         <tr>
